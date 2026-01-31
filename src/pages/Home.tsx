@@ -4,6 +4,18 @@ import officeCleaningImg from "../assets/office-cleaning.jpg";
 import deepCleaningImg from "../assets/deep-cleaning.jpg";
 import aboutUsImg from "../assets/about-us.jpg";
 import whyUsImg from "../assets/why-us.jpg";
+import sixStagesImg from "../assets/six-stages-of-cleaning.jpg";
+
+const WaveDivider = () => (
+  <div className="wave-divider">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path
+        d="M0,64L48,74.7C96,85,192,107,288,101.3C384,96,480,64,576,58.7C672,53,768,75,864,85.3C960,96,1056,96,1152,90.7C1248,85,1344,75,1392,69.3L1440,64L1440,0L0,0Z"
+        fill="#ffffff"
+      ></path>
+    </svg>
+  </div>
+);
 
 const services = [
   {
@@ -41,17 +53,21 @@ export default function Home() {
             <p>
               KingdomCleen is a professional cleaning company based in Ottawa, serving residential and commercial clients across Ontario. We deliver reliable, high-quality cleaning using modern equipment and eco-friendly products. From homes to offices and commercial spaces, we offer flexible cleaning plans tailored to your needs. At KingdomCleen, quality, care, and customer satisfaction come first.
             </p>
-            <a href="#services" className="btn">
+            <a href="#services" className="btn-primary">
               View Services
             </a>
           </motion.div>
 
-          <div className="hero-image" />
+          <div className="hero-image image-card">
+            <img src={sixStagesImg} alt="Six stages of cleaning" />
+          </div>
         </div>
       </section>
 
-      <section id="about" className="about">
-        <div className="about-grid">
+      <WaveDivider />
+
+      <section id="about" className="about clean-pattern">
+        <div className="about-grid glass-card">
           <div className="about-text">
             <span className="badge">ABOUT US</span>
             <h2>
@@ -85,8 +101,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="why-us" className="why-us">
-        <div className="container">
+      <WaveDivider />
+
+      <section id="why-us" className="why-us clean-pattern">
+        <div className="container glass-card">
           <h2>Why Choose Us ?</h2>
           <div className="why-us-grid">
             <div className="why-us-item">
@@ -109,6 +127,8 @@ export default function Home() {
         </div>
       </section>
 
+      <WaveDivider />
+
       <section id="services" className="services-section">
         <div className="section-heading">
           <span className="badge1">OUR SERVICES</span>
@@ -121,7 +141,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="service-card"
+              className="service-card glass-card"
             >
               <div className="service-card-inner">
                 <div className="service-card-front">
@@ -145,8 +165,20 @@ export default function Home() {
           <input placeholder="Name" required />
           <input type="email" placeholder="Email" required />
           <textarea placeholder="Message" required />
-          <button className="btn primary">Send</button>
+          <button className="btn-primary">Send</button>
         </form>
+      </section>
+
+      <WaveDivider />
+
+      
+
+      <section className="image-section">
+        <div className="container">
+          <h2>Ready for a Spotless Space?</h2>
+          <p>Let us handle the dirty work. You deserve a clean and healthy environment.</p>
+          <a href="#contact" className="btn-primary">Get a Free Quote</a>
+        </div>
       </section>
     </>
   );
