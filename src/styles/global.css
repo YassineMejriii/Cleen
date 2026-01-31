@@ -87,11 +87,11 @@ p {
     justify-content: space-between;
 }
 
-.logo {
-    margin-top: 16px;
-    font-size: 24px;
+.brand-text {
+    font-size: 22px;
     font-weight: 800;
     color: #1e40af;
+    letter-spacing: -0.02em;
 }
 
 nav {
@@ -108,14 +108,12 @@ nav a {
 }
 
 nav a:hover {
-    color: #1e40af;
+    color: #1B56FD;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+
 .btn {
-    background: #2563eb;
+    background: #1B56FD;
     color: white;
     padding: 12px 24px;
     border-radius: 8px;
