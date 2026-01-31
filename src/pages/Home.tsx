@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
+import { Phone, Mail, Facebook, Instagram, MapPin, ArrowUp } from "lucide-react";
+import { useState, useEffect } from "react";
 import homeCleaningImg from "../assets/home-cleaning.jpeg";
 import officeCleaningImg from "../assets/office-cleaning.jpg";
-import deepCleaningImg from "../assets/deep-cleaning.jpg";
-import aboutUsImg from "../assets/about-us.jpg";
+import deepCleaningImg from "../assets/deep-cleaning .jpg";
+import geminiAboutImg from "../assets/Gemini_Generated_Image_iot119iot119iot1 (1).png";
+import geminiResidentialImg from "../assets/Gemini_Generated_Image_houixjhouixjhoui (1).png";
 import whyUsImg from "../assets/why-us.jpg";
-import sixStagesImg from "../assets/six-stages-of-cleaning.jpg";
+import commercialCleaningImg from "../assets/commercial_cleaning_services.jpg";
+import familyDayImg from "../assets/🏡✨ Sunday is Family Day! ✨🏡_Nothing feels better than spending quality time with loved ones in a fresh, clean, and clutter-free home! 💖 Enjoy a relaxing Sunday without worrying about the mess—Gold Star Maids has.jpg";
 
 const WaveDivider = () => (
   <div className="wave-divider">
@@ -18,27 +22,46 @@ const WaveDivider = () => (
 );
 
 const services = [
-  {
-    name: "Home Cleaning",
-    price: "From $80",
-    image: homeCleaningImg,
-    description: "A thorough cleaning of your home, including dusting, vacuuming, and mopping.",
-  },
-  {
-    name: "Office Cleaning",
-    price: "From $120",
-    image: officeCleaningImg,
-    description: "Keep your workspace clean and professional with our comprehensive office cleaning services.",
-  },
-  {
-    name: "Deep Cleaning",
-    price: "From $200",
-    image: deepCleaningImg,
-    description: "An intensive cleaning for a spotless and sanitized environment, perfect for a fresh start.",
-  },
+{
+  name: "Residential Cleaning",
+  descriptionName: "Whether for regular cleaning or a deep clean, we make your home clean and comfortable.",
+  image: geminiResidentialImg,
+  description: "What We Offer:\n Complete room cleaning \n Vacuuming & floor washing \n Dusting & disinfection \n Kitchen & bathroom cleaning",
+},
+{
+  name: "Commercial Cleaning",
+  descriptionName: "A clean space means a better impression for your clients and employees.",
+  image: officeCleaningImg,
+  description: "Services: \n Office cleaning \n Common area maintenance \n Post-event cleaning",
+},
+{
+  name: "Post-Renovation Cleaning",
+  descriptionName: " We deliver a clean, healthy, and ready-to-use space.",
+  image: deepCleaningImg,
+  description: "Has your space just been renovated? We remove dust, debris, and all traces left after the work is done.",
+},
 ];
 
 export default function Home() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button when user scrolls down 300px
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       <section className="hero">
@@ -59,7 +82,7 @@ export default function Home() {
           </motion.div>
 
           <div className="hero-image image-card">
-            <img src={sixStagesImg} alt="Six stages of cleaning" />
+            <img src={commercialCleaningImg} alt="Commercial cleaning services" />
           </div>
         </div>
       </section>
@@ -71,7 +94,7 @@ export default function Home() {
           <div className="about-grid glass-card">
             <div className="about-text">
               <span className="badge">ABOUT US</span>
-              <h2>Who are we?</h2>
+              <h3>Who are we?</h3>
               <p>
                 We are your advisor and your inexhaustible and always up-to-date source of expertise and know-how, both strategic and entrepreneurial.
               </p>
@@ -91,7 +114,7 @@ export default function Home() {
               </div>
             </div>
             <div className="about-image">
-              <img src={aboutUsImg} alt="About us" />
+              <img src={geminiAboutImg} alt="About us" />
             </div>
           </div>
         </div>
@@ -103,7 +126,8 @@ export default function Home() {
         <div className="container">
           <div className="why-us-grid-container glass-card">
             <div className="why-us-content">
-              <h2>Why Choose Us?</h2>
+              <span className="badge">Why Choose Us?</span>
+              
               <div className="why-us-grid">
                 <div className="why-us-item">
                   <h3>Professional Expertise</h3>
@@ -146,7 +170,7 @@ export default function Home() {
                 <div className="service-card-front">
                   <img src={service.image} alt={service.name} className="service-image" />
                   <h3>{service.name}</h3>
-                  <p>{service.price}</p>
+                  <p>{service.descriptionName}</p>
                 </div>
                 <div className="service-card-back">
                   <h3>{service.name}</h3>
@@ -158,27 +182,169 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="page">
-        <h2>Contact Us</h2>
-        <form className="contact-form">
-          <input placeholder="Name" required />
-          <input type="email" placeholder="Email" required />
-          <textarea placeholder="Message" required />
-          <button className="btn-primary">Send</button>
-        </form>
+      <section id="contact" className="contact-section">
+        <div className="container">
+          <div className="section-heading">
+            <span className="badge1">CONTACT</span>
+          </div>
+          
+          {/* Contact Information Cards */}
+          <div className="contact-grid">
+            <motion.a
+              href="tel:(438)223-2322"
+              className="contact-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="contact-icon">
+                <Phone size={32} />
+              </div>
+              <div className="contact-content">
+                <h3>Telephone</h3>
+                <p>(438) 223-2322</p>
+              </div>
+            </motion.a>
+
+            <motion.a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=kingdomcleen@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="contact-icon">
+                <Mail size={32} />
+              </div>
+              <div className="contact-content">
+                <h3>Email</h3>
+                <p>kingdomcleen@gmail.com</p>
+              </div>
+            </motion.a>
+
+            <motion.a
+              href="https://www.facebook.com/profile.php?id=61587206704842"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="contact-icon">
+                <Facebook size={32} />
+              </div>
+              <div className="contact-content">
+                <h3>Facebook</h3>
+                <p>Suivez-nous</p>
+              </div>
+            </motion.a>
+
+            <motion.a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="contact-icon">
+                <Instagram size={32} />
+              </div>
+              <div className="contact-content">
+                <h3>Instagram</h3>
+                <p>Suivez-nous</p>
+              </div>
+            </motion.a>
+
+            <motion.a
+              href="https://maps.google.com/?q=1338+Wellington+St+W+Ottawa+ON+K1Y+3B7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="contact-icon">
+                <MapPin size={32} />
+              </div>
+              <div className="contact-content">
+                <h3>Adresse</h3>
+                <p>1338 Wellington St. W, Ottawa, ON K1Y 3B7</p>
+              </div>
+            </motion.a>
+          </div>
+
+          {/* Google Maps */}
+          <motion.div
+            className="map-container"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2803.0159639532907!2d-75.74564222346987!3d45.41623657105672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce04cd3b8e8e8d%3A0x9e8e8e8e8e8e8e8e!2s1338%20Wellington%20St%20W%2C%20Ottawa%2C%20ON%20K1Y%203B7!5e0!3m2!1sen!2sca!4v1706779200000"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </motion.div>
+        </div>
       </section>
 
       <WaveDivider />
 
-      
-
-      <section className="image-section">
+      {/* FAQ Section */}
+      <section className="faq-container">
         <div className="container">
-          <h2>Ready for a Spotless Space?</h2>
-          <p>Let us handle the dirty work. You deserve a clean and healthy environment.</p>
-          <a href="#contact" className="btn-primary">Get a Free Quote</a>
+          <div className="section-heading">
+            <span className="badge1">FAQ</span>
+          </div>
+          <div className="faq-grid">
+            {/* Image on the left */}
+            <div className="faq-image">
+              <img src={familyDayImg} alt="Family Day Clean Home" />
+            </div>
+            
+            {/* Questions on the right */}
+            <div className="faq-section">
+              <div className="faq-item">
+                <p className="faq-question">💬 <strong> Do you bring your own products?</strong></p>
+                <p className="faq-answer">  👤  Yes, we use professional, safe products for your home.</p>
+              </div>
+              <div className="faq-item">
+                <p className="faq-question">💬 <strong> Do you work on weekends?</strong></p>
+                <p className="faq-answer">      👤 Yes, upon request.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Scroll to Top Button */}
+      <motion.button
+        onClick={scrollToTop}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: showScrollTop ? 1 : 0, y: showScrollTop ? 0 : 20 }}
+        transition={{ duration: 0.3 }}
+        className="scroll-to-top"
+        aria-label="Scroll to top"
+      >
+        <ArrowUp size={24} />
+      </motion.button>
     </>
   );
 }

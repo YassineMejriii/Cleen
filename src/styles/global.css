@@ -331,13 +331,16 @@ nav a:hover {
 
 .badge {
     display: inline-block;
-    font-size: 13px;
-    font-weight: 600;
-    background: #e0f2fe;
+    font-size: 14px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #e0f2fe 0%, #cffafe 100%);
     color: #0c4a6e;
-    padding: 6px 14px;
-    border-radius: 999px;
+    padding: 10px 20px;
+    border-radius: 50px;
     margin-bottom: 16px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    text-transform: uppercase;
 }
 
 .about-text h2 span {
@@ -428,13 +431,16 @@ nav a:hover {
 
 .badge1 {
     display: inline-block;
-    font-size: 13px;
-    font-weight: 600;
-    background: #e0f2fe;
+    font-size: 14px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #e0f2fe 0%, #cffafe 100%);
     color: #0c4a6e;
-    padding: 6px 14px;
-    border-radius: 999px;
+    padding: 10px 20px;
+    border-radius: 50px;
     margin-bottom: 16px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    text-transform: uppercase;
 }
 
 /* =========================
@@ -581,7 +587,8 @@ footer p {
 
     .hero-grid,
     .about-grid,
-    .why-us-grid-container {
+    .why-us-grid-container,
+    .faq-grid {
         grid-template-columns: 1fr;
         text-align: center;
     }
@@ -605,5 +612,417 @@ footer p {
 
     nav {
         gap: 16px;
+    }
+
+    .faq-image {
+        margin-bottom: 20px;
+    }
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact{
+ display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    margin: auto;
+}
+.contact-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 80px 0;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    color: #0f172a;
+}
+
+.contact-section > .container > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 50px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    color: inherit;
+    cursor: pointer;
+    text-align: center;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(30, 64, 175, 0.3);
+    background: #1e40af;
+}
+
+.contact-card:hover .contact-content h3,
+.contact-card:hover .contact-content p {
+    color: white;
+}
+
+.contact-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    background: white;
+    color: #1e40af;
+}
+
+.contact-content h3 {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.contact-content p {
+    font-size: 0.75rem;
+    color: #64748b;
+    line-height: 1.3;
+}
+
+
+
+/* FAQ Section */
+.faq-section {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.faq-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #0f172a;
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.faq-question {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.faq-answer {
+    font-size: 1rem;
+    color: #475569;
+    padding-left: 20px;
+}
+
+.faq-image {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.faq-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+/* FAQ Container Section */
+.faq-container {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Map Container */
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    border-radius: 12px;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    section {
+        padding: 30px 0;
+    }
+
+    .contact-section {
+        padding: 40px 0;
+    }
+
+    .contact-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 12px;
+    }
+
+    .contact-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .contact-content h3 {
+        font-size: 0.85rem;
+    }
+
+    .contact-content p {
+        font-size: 0.7rem;
+    }
+
+    .map-container iframe {
+        height: 300px !important;
+    }
+
+    .faq-grid {
+        gap: 24px;
+    }
+
+    .faq-section {
+        padding: 20px;
+    }
+
+    .badge, .badge1 {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .glass-card {
+        padding: 16px;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .why-us-grid-container {
+        gap: 24px;
+    }
+
+    .hero-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    section {
+        padding: 20px 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .contact-card {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .contact-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .contact-content h3 {
+        font-size: 0.8rem;
+    }
+
+    .contact-content p {
+        font-size: 0.65rem;
+    }
+
+    .faq-grid {
+        gap: 16px;
+    }
+
+    .faq-section {
+        padding: 15px;
+    }
+
+    .map-container iframe {
+        height: 250px !important;
+    }
+
+    .badge, .badge1 {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .glass-card {
+        padding: 12px;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .why-us-grid-container {
+        gap: 16px;
+    }
+
+    .hero-image {
+        height: 200px;
+    }
+
+    .services {
+        gap: 16px;
+    }
+
+    .values-grid {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .value {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================
+   SCROLL TO TOP BUTTON
+========================= */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(30, 64, 175, 0.4);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(30, 64, 175, 0.6);
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
     }
 }

@@ -4,6 +4,7 @@ import {
   useScroll,
 } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logoImg from "../assets/logo.png";
 
 export default function Navbar() {
@@ -30,14 +31,14 @@ export default function Navbar() {
       className="navbar"
     >
       <div className="container navbar-inner">
-        <a href="#" className="logo-link">
+        <Link to="/" className="logo-link">
           <img src={logoImg} alt="KingdomCleen Logo" className="logo-img" />
-        </a>
+        </Link>
         <nav>
-          <a href="#">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Our Services</a>
-          <a href="#contact" className="btn">
+          <Link to="/">Home</Link>
+          <a href="/#about">About</a>
+          <a href="/#services">Our Services</a>
+          <a href="/#contact" className="btn">
             Contact
           </a>
         </nav>
