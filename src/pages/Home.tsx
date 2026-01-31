@@ -67,36 +67,32 @@ export default function Home() {
       <WaveDivider />
 
       <section id="about" className="about clean-pattern">
-        <div className="about-grid glass-card">
-          <div className="about-text">
-            <span className="badge">ABOUT US</span>
-            <h2>
-              Who are we ?
-            </h2>
-
-            <p>
-              We are your advisor and your inexhaustible and always up-to-date source of expertise and know-how, both strategic and entrepreneurial.
-            </p>
-
-            <h3 className="why-title">Why choose us ?</h3>
-            <p>
-              Our way of making a difference is to design services adapted to your strategy and objectives.
-            </p>
-
-            <div className="values">
-              <h3>Our Values</h3>
-              <div className="values-grid">
-                <div className="value">🤝 Trust</div>
-                <div className="value">📍 Proximity</div>
-                <div className="value">⭐ Quality</div>
-                <div className="value">🚀 Commitment</div>
-                <div className="value">🏆 Excellence</div>
+        <div className="container">
+          <div className="about-grid glass-card">
+            <div className="about-text">
+              <span className="badge">ABOUT US</span>
+              <h2>Who are we?</h2>
+              <p>
+                We are your advisor and your inexhaustible and always up-to-date source of expertise and know-how, both strategic and entrepreneurial.
+              </p>
+              <h3 className="why-title">Why choose us?</h3>
+              <p>
+                Our way of making a difference is to design services adapted to your strategy and objectives.
+              </p>
+              <div className="values">
+                <h3>Our Values</h3>
+                <div className="values-grid">
+                  <div className="value">🤝 Trust</div>
+                  <div className="value">📍 Proximity</div>
+                  <div className="value">⭐ Quality</div>
+                  <div className="value">🚀 Commitment</div>
+                  <div className="value">🏆 Excellence</div>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="about-image">
-            <img src={aboutUsImg} alt="About us" />
+            <div className="about-image">
+              <img src={aboutUsImg} alt="About us" />
+            </div>
           </div>
         </div>
       </section>
@@ -104,25 +100,28 @@ export default function Home() {
       <WaveDivider />
 
       <section id="why-us" className="why-us clean-pattern">
-        <div className="container glass-card">
-          <h2>Why Choose Us ?</h2>
-          <div className="why-us-grid">
-            <div className="why-us-item">
-              <h3>Professional Expertise</h3>
-              <p>Our team is composed of trained and experienced professionals, guaranteeing a high-quality service.</p>
+        <div className="container">
+          <div className="why-us-grid-container glass-card">
+            <div className="why-us-content">
+              <h2>Why Choose Us?</h2>
+              <div className="why-us-grid">
+                <div className="why-us-item">
+                  <h3>Professional Expertise</h3>
+                  <p>Our team is composed of trained and experienced professionals, guaranteeing a high-quality service.</p>
+                </div>
+                <div className="why-us-item">
+                  <h3>Eco-friendly Products</h3>
+                  <p>We use eco-friendly and safe cleaning products for your family and pets.</p>
+                </div>
+                <div className="why-us-item">
+                  <h3>Satisfaction Guaranteed</h3>
+                  <p>Your satisfaction is our priority. We are committed to providing an impeccable cleaning on every visit.</p>
+                </div>
+              </div>
             </div>
-            <div className="why-us-item">
-              <h3>Eco-friendly Products</h3>
-              <p>We use eco-friendly and safe cleaning products for your family and pets.</p>
+            <div className="why-us-image">
+              <img src={whyUsImg} alt="Why us" />
             </div>
-            <div className="why-us-item">
-              <h3>Satisfaction Guaranteed</h3>
-              <p>Your satisfaction is our priority. We are committed to providing an impeccable cleaning on every visit.</p>
-            </div>
-          </div>
-
-          <div className="why-us-image">
-            <img src={whyUsImg} alt="Why us" />
           </div>
         </div>
       </section>

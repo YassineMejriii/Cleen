@@ -206,12 +206,13 @@ nav a:hover {
 ========================= */
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 48px;
     align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+}
+
+.about-text {
+    text-align: left;
 }
 
 .glass-card {
@@ -289,12 +290,38 @@ nav a:hover {
 }
 
 .image-section {
-  background:
-    linear-gradient(120deg, rgba(30,64,175,0.85), rgba(59,130,246,0.7)),
-    url("../assets/deep-cleaning.jpg") center/cover;
-  color: white;
-  padding: 120px 0;
-  text-align: center;
+    background:
+        linear-gradient(120deg, rgba(30, 64, 175, 0.85), rgba(59, 130, 246, 0.7)),
+        url("../assets/deep-cleaning.jpg") center/cover;
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+}
+
+.image-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.image-section h2 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.image-section p {
+    text-align: center;
+    margin: 0 auto 32px;
+    max-width: 600px;
+}
+
+.image-section .btn-primary {
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .about-text p {
@@ -352,33 +379,34 @@ nav a:hover {
 /* =========================
    WHY US
 ========================= */
-.why-us {
-    background-color: #ffffff;
-}
-
-.why-us .container {
+.why-us-grid-container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 48px;
-    max-width: 800px;
-    text-align: center;
+    align-items: center;
 }
 
-.why-us h2 {
-    margin-bottom: 0; 
+.why-us-content {
+    text-align: left;
+}
+
+.why-us-content p {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .why-us-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 24px;
 }
 
 .why-us-item {
     background: #f0f9ff;
     padding: 32px;
     border-radius: 16px;
-    text-align: center;
+    text-align: left;
 }
 
 .why-us-item h3 {
@@ -387,7 +415,6 @@ nav a:hover {
 
 .why-us-image img {
     border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     margin: 0 auto;
 }
 
@@ -533,7 +560,15 @@ footer {
     padding: 48px 0;
     text-align: center;
     font-size: 14px;
-    color: #94a3b8;
+    color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
 }
 
 /* =========================
@@ -545,13 +580,15 @@ footer {
     }
 
     .hero-grid,
-    .about-grid {
+    .about-grid,
+    .why-us-grid-container {
         grid-template-columns: 1fr;
         text-align: center;
     }
 
     .hero-content p,
-    .about-text p {
+    .about-text p,
+    .why-us-content p {
         margin-left: auto;
         margin-right: auto;
     }
