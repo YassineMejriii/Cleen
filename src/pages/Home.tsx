@@ -1,9 +1,27 @@
 import { motion } from "framer-motion";
+import homeCleaningImg from "../assets/home-cleaning.jpeg";
+import officeCleaningImg from "../assets/office-cleaning.jpg";
+import deepCleaningImg from "../assets/deep-cleaning.jpg";
 
 const services = [
-  { name: "Home Cleaning", price: "From $80" },
-  { name: "Office Cleaning", price: "From $120" },
-  { name: "Deep Cleaning", price: "From $200" },
+  {
+    name: "Home Cleaning",
+    price: "From $80",
+    image: homeCleaningImg,
+    description: "A thorough cleaning of your home, including dusting, vacuuming, and mopping.",
+  },
+  {
+    name: "Office Cleaning",
+    price: "From $120",
+    image: officeCleaningImg,
+    description: "Keep your workspace clean and professional with our comprehensive office cleaning services.",
+  },
+  {
+    name: "Deep Cleaning",
+    price: "From $200",
+    image: deepCleaningImg,
+    description: "An intensive cleaning for a spotless and sanitized environment, perfect for a fresh start.",
+  },
 ];
 
 export default function Home() {
@@ -102,9 +120,17 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             className="service-card"
           >
-            <div className="image-placeholder" />
-            <h3>{service.name}</h3>
-            <p>{service.price}</p>
+            <div className="service-card-inner">
+              <div className="service-card-front">
+                <img src={service.image} alt={service.name} className="service-image" />
+                <h3>{service.name}</h3>
+                <p>{service.price}</p>
+              </div>
+              <div className="service-card-back">
+                <h3>{service.name}</h3>
+                <p>{service.description}</p>
+              </div>
+            </div>
           </motion.div>
         ))}
       </section>
