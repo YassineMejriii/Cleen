@@ -1,9 +1,37 @@
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "framer-motion";
+import { useState } from "react";
+import logoImg from "../assets/logo.png";
+
 export default function Navbar() {
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (previous !== undefined && latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
   return (
-    <header className="navbar">
+    <motion.header
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="navbar"
+    >
       <div className="container navbar-inner">
         <a href="#" className="logo-link">
-          <h1 className="logo">KingdomCleen</h1>
+          <img src={logoImg} alt="KingdomCleen Logo" className="logo-img" />
         </a>
         <nav>
           <a href="#">Home</a>
@@ -14,6 +42,6 @@ export default function Navbar() {
           </a>
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 }

@@ -88,11 +88,9 @@ p {
     justify-content: space-between;
 }
 
-.logo {
-    margin-top: 16px;
-    font-size: 24px;
-    font-weight: 800;
-    color: #1e40af;
+.logo-img {
+    height: 70px; /* Adjust size as needed */
+    width: auto;
 }
 
 nav {
